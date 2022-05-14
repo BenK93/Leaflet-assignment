@@ -1,0 +1,8 @@
+<div>
+  <div id="map"
+       leaflet
+       [leafletOptions]="options"
+       (leafletMapReady)="onMapReady($event)"
+       (leafletMapZoomEnd)="onMapZoomEnd($event)"
+       style="width: 100%;min-height:100%; height: 800px;"></div>
+</div>
