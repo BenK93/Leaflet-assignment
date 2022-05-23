@@ -7,6 +7,8 @@ import { LayersMenuComponent } from './components/layers-menu/layers-menu.compon
 import {LeafletModule} from "@asymmetrik/ngx-leaflet";
 import {NzCheckboxModule} from "ng-zorro-antd/checkbox";
 import {FormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -15,6 +17,7 @@ import {FormsModule} from "@angular/forms";
     LayersMenuComponent,
   ],
   imports: [
+    HttpClientModule,
     LeafletModule,
     BrowserModule,
     NzCheckboxModule,

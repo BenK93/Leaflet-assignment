@@ -1,18 +1,1517 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~ng-zorro-antd/ng-zorro-antd.min.css";
+@import "~leaflet/dist/leaflet.css";
+
 html {
   height: 100%;
   min-height: 100%;
 }
+
 body {
   min-height: 100%;
   margin: 0 auto;
 }
-app-root{
+
+app-root {
   display: flex;
-  overflow:auto;
-  position:absolute;
+  overflow: auto;
+  position: absolute;
   width: 100%;
   min-height: 100%;
   height: 100%;
+}
+
+/*תחנות GPS*/
+.gps_stations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -1px;
+}
+
+/*חניונים ואתרים של קק""ל*/
+.ilpublicsites_june05 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -1px;
+}
+
+/*נדרש אייקון חדש*/
+/*משרדי קרן קיימת לישראל*/
+.ilkkloff {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -1px;
+}
+
+/*נקודות תצפית לגילוי שרפות*/
+.ilkklfiretr {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -1px;
+}
+
+/*לשכות משרד הבריאות*/
+.chambers {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -1px;
+}
+
+/*לשכות רשות האוכלוסין וההגירה*/
+.piba {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -1px;
+}
+
+/*משרד המשפטים*/
+.justice {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -1px;
+}
+
+/*קלפיות נגישות*/
+.kalpi_negishut {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -1px;
+}
+
+/*קופות חולים-חלקי*/
+.clinics {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -233px 1px;
+}
+
+/*תחנות טיפת חלב*/
+.health_care_baby_stations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -262px -1px;
+}
+
+/*בתי ספר */
+.school {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -291px -1px;
+}
+
+/*גני ילדים*/
+.kids_g {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -320px -1px;
+}
+
+/*מכללות*/
+.collegel {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -349px -1px;
+}
+
+/*מחצבות*/
+.quarries {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -378px -1px;
+}
+
+/*שכונות-נקודתי*/
+.neighborhood {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -407px -1px;
+}
+
+/*מחצבות נטושות*/
+.mahazevotnetushot {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -436px -1px;
+}
+
+/*קידוחי נפט וגז*/
+.oilgaswells {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -1px;
+}
+
+/*באנגלית קידוחי נפט וגז*/
+.oilgaswells_eng {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -1px;
+}
+
+/*סניפי ביטוח לאומי*/
+.btl {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -494px -1px;
+}
+
+/*סניפי דואר ישראל*/
+.post {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -523px -1px;
+}
+
+/*תיבות דואר*/
+.mailboxes {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -552px -1px;
+}
+
+/*סניפי בנקים*/
+.banks {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -1px;
+}
+
+/*כספומטים - חלקי*/
+.atms {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -610px -1px;
+}
+
+/*סניפים שכר דירה*/
+.rent {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -639px -1px;
+}
+
+/*מרכזי מחקר ופיתוח*/
+.mop_project {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -668px -1px;
+}
+
+/*מסגרות מעונות יום ומשפחתונים*/
+.daycare {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -1px;
+}
+
+/*מאגר מידע למשקיע*/
+.tamat_investor_informetion {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -726px -1px;
+}
+
+/*מסחר מקוון*/
+.tradingsettl {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -755px -1px;
+}
+
+/*חסר אייקון ראשי*/
+/*מתקני ספורט*/
+.sport {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -784px -1px;
+}
+
+/*מוסדות גריאטריים*/
+.mosdot_griatric {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -813px -1px;
+}
+
+/*אטרקציות*/
+.atractions {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -842px -1px;
+}
+
+/*צימרים*/
+.zimmer {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -30px;
+}
+
+/*יקבים*/
+.winery {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -30px;
+}
+
+/*באנגלית יקבים*/
+.winery_eng {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -30px;
+}
+
+/*בתי מלון*/
+.hotels {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -30px;
+}
+
+/*אתרי תיירות בתכנון*/
+.tayarut {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -30px;
+}
+
+/*נדרש תיקון אייקון*/
+/*אבני ק""מ*/
+.milestones {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -30px;
+}
+
+/*תוכניות ניטור ימיות*/
+.nitur_yamit {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -30px;
+}
+
+/*הנקיון בחוף*/
+.hof_naki_update {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -30px;
+}
+
+/*הפרדת פסולת ברשויות המקומיות*/
+.rashiot_mikud {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -30px;
+}
+
+/*מוקדי אמברוסיה*/
+.ambrosia {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -233px -30px;
+}
+
+/*מבנים ירוקים*/
+.greenbuildings {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -262px -30px;
+}
+
+/*אנטנות סלולריות פעילות*/
+.cell_active {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -291px -30px;
+}
+
+/*חסר אייקון ראשי*/
+/*אנטנות סלולריות בהקמה*/
+.antena_hakama {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -320px -30px;
+}
+
+/*מקורות זיהום נחלים*/
+.zihum {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -349px -30px;
+}
+
+/*תחנות ניטור אוויר*/
+.sviva_nitur_air {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -378px -30px;
+}
+
+/*מפל""ס-מרשם פליטות לסביבה 2014*/
+.divuchim2014 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -30px;
+}
+
+/*מפל""ס-מרשם פליטות לסביבה 2015*/
+.divuchim2015 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -494px -30px;
+}
+
+/*מפל""ס-מרשם פליטות לסביבה 2016*/
+.divuchim2016 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -117px;
+}
+
+/*פליטות מזהמים מכבישים (NOx)*/
+.sviva_mitkanim {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -233px -30px;
+}
+
+/*נתוני פליטות לאוויר ממפעלים*/
+.sviva_nitur_mifal {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -552px -30px;
+}
+
+/*אתרים לאומיים*/
+.natl_sites {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -30px;
+}
+
+/*סקר ראדון*/
+.radon {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -610px -30px;
+}
+
+/*אורות ומיגדלורים*/
+.lighthouse {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -639px -30px;
+}
+
+/*אוניות טבועות*/
+.wreckedships {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -668px -30px;
+}
+
+/*שמות גאוגרפים*/
+.gazetteer {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -30px;
+}
+
+/*מתקני רישוי נהיגה*/
+.trans_poi {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -726px -30px;
+}
+
+/*מצלמות אכיפה אלקטרונית אוטומטית*/
+.speedcamera {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -755px -30px;
+}
+
+/*לשכות רישוי מחוזיות כלי יריה*/
+.mahoz_bp {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -784px -30px;
+}
+
+/*מתקני כליאה ומעצר שירות בתי הסוהר*/
+.ips {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -813px -30px;
+}
+
+/*עיר ללא אלימות*/
+.yeshuvim_b_pnim {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -842px -30px;
+}
+
+/*מצילה*/
+.mezila {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -59px;
+}
+
+/*שיטור עירוני*/
+.situr_ironi {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -59px;
+}
+
+/*פנימיות בתוכנית מצילה*/
+.boarding_schools {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -59px;
+}
+
+/*מטווחים */
+.shooting_range {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -59px;
+}
+
+/*תחנות אוטובוס*/
+.bus_stops {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -59px;
+}
+
+/*תחנות מערכת הסעת המונים בגוש דן*/
+.red_line_sta {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -59px;
+}
+
+/*מעג""ל מבנים*/
+.maagalbldg {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -59px;
+}
+
+/*חסר אייקון*/
+/*מעג""ל צמתים*/
+.maagaljunctions {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -59px;
+}
+
+/*חסר אייקון*/
+/*תחנות משטרה*/
+.police_yehida_location {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -233px -59px;
+}
+
+/*מפקדות מחוזות משטרה*/
+.police_mahoz_location {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -262px -59px;
+}
+
+/*מפקדות מרחבי משטרה*/
+.police_merhav_location {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -291px -59px;
+}
+
+/*תחנות כיבוי אש*/
+.fire_stations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -320px -59px;
+}
+
+/*בתי חולים*/
+.emergancy_hospitals {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -349px -59px;
+}
+
+/*תחנות מגן דוד אדום*/
+.mada_stations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -378px -59px;
+}
+
+/*מרפאות בריאות הנפש*/
+.mentalhealthclinics {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -407px -59px;
+}
+
+/*משרדי משרד החקלאות*/
+.agriculture_offices {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -436px -59px;
+}
+
+/*משרדי השרותים הווטרינריים*/
+.veterinaryoffices {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -59px;
+}
+
+/*עצי מורשת*/
+.maturetrees {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -494px -59px;
+}
+
+/*כיתות גיור*/
+.giur_class {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -523px -59px;
+}
+
+/*מקוואות*/
+.mikve {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -552px -59px;
+}
+
+/*מועצות דתיות*/
+.moatzot {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -59px;
+}
+
+/*לשכות שירות התעסוקה*/
+.ies {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -610px -59px;
+}
+
+/*מקלטים*/
+.bombshelters {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -668px -59px;
+}
+
+/*תחנות דלק*/
+.gasstations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -59px;
+}
+
+/*ניקוד מדד השפעה סביבתי*/
+.svivafactories2016 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -59px;
+}
+
+/*חסר אייקון*/
+/*אזורים סטטיסטיים*/
+.statistic_areas_2011 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -88px;
+}
+
+/*אכסניות*/
+.geusthouse {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -726px -59px;
+}
+
+/*אתרי קמפינג*/
+.campings {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -755px -59px;
+}
+
+/*מסעדות*/
+.restaurants {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -784px -59px;
+}
+
+/*אירועי תרבות ופנאי*/
+.events {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -813px -59px;
+}
+
+/*בתי ספר שדה*/
+.fieldschool {
+  background: url(httpss://www.govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -842px -59px;
+}
+
+/*גושים*/
+.sub_gush_all {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -88px;
+}
+
+/*חלקות*/
+.parcel_all {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -88px;
+}
+
+/*שכבת שכונות*/
+.neighborhoods_Area {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -88px;
+}
+
+/*השכרת קרוואנים*/
+.caravansrental {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -88px;
+}
+
+/*מסלולים*/
+.tracks {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -88px;
+}
+
+/*סיורים מודרכים*/
+.guidedtours {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -88px;
+}
+
+/*מרכזי כנסים*/
+.conventioncenters {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -88px;
+}
+
+/*השכרת אופניים*/
+.bicyclerental {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -233px -88px;
+}
+
+/*חניונים*/
+.carparks {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -262px -88px;
+}
+
+/*מסחר מקוון*/
+.tradingsettl {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -291px -88px;
+}
+
+/*סניפים שכר דירה*/
+.rent {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -320px -88px;
+}
+
+/*מקלטים*/
+.bombshelters {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -349px -88px;
+}
+
+/*חברות בע"מ*/
+.coorporations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -378px -88px;
+}
+
+/*מוסדות רווחה*/
+.revachastructures {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -407px -88px;
+}
+
+/*נקודות שירות עלייה וקליטה	*/
+.nekudotklita {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -436px -88px;
+}
+
+/*תחנות שירות לאומי	*/
+.sherutleumi {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -88px;
+}
+
+/*תחנות שי"ל - שירות ייעוץ לאזרח*/
+.shil {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -494px -88px;
+}
+
+/*סך פליטות 2014 בנזן*/
+.muni_bnz {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -523px -88px;
+}
+
+/*סך פליטות 2014 תחמוצות גופרית	*/
+.muni_so2 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -552px -88px;
+}
+
+/*סך פליטות 2014 בוטדיאן 1,3*/
+.muni_btd {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -88px;
+}
+
+/*סך פליטות 2014 פחמן חד חמצני	*/
+.muni_co {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -610px -88px;
+}
+
+/*סך פליטות 2014 VOC*/
+.muni_nmvoc {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -639px -88px;
+}
+
+/*סך פליטות 2014 תחמוצות חנקן*/
+.muni_nox {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -668px -88px;
+}
+
+/*סך פליטות 2014 PM 10*/
+.muni_pm10 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -88px;
+}
+
+/*סך פליטות 2014 PM 2.5	*/
+.muni_pm25 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -726px -88px;
+}
+
+/*מעג"ל מבנים*/
+.maagalbldg {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -755px -88px;
+}
+
+/*מעג"ל צמתים*/
+.maagaljunctions {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -784px -88px;
+}
+
+/*מעג"ל כבישים*/
+.maagalroads {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -813px -88px;
+}
+
+/*גנים לאומיים*/
+.ganim_leumim {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -842px -88px;
+}
+
+/*ממצאים נקודתיים - טבע עירוני*/
+.teva_ironi_nek {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -117px;
+}
+
+/*מפגעים - טבע עירוני*/
+.teva_ironi_mifga {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -117px;
+}
+
+/*נקודות עומק במטרים*/
+.depth_points {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -117px;
+}
+
+/*מצופים*/
+.buoy {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -117px;
+}
+
+/*שקיפות רשויות מול תושבים*/
+.transparencyauthorities {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -117px;
+}
+
+/*אסבסט בקרקעות הגליל המערבי*/
+.asbestos {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -117px;
+}
+
+/*אתרי רשות הטבע והגנים*/
+.atarei_ratag {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -117px;
+}
+
+/*מרפאות בריאות הנפש*/
+.clinicinsurance {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -117px;
+}
+
+/*מכשולי ניווט*/
+.navigationobstacles {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -262px -117px;
+}
+
+/*נקודות בקרה*/
+.nekudot_geo {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -291px -117px;
+}
+
+/*בתי דין רבניים*/
+.bateydin {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -320px -117px;
+}
+
+/*תחנות דלק שעת חירום*/
+.emergencyfuelstations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -349px -117px;
+}
+
+/*נקודות עניין תיירות*/
+.tourism_applicationdata_pt {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -378px -117px;
+}
+
+/*עסקים במסגרת החזר מעמ לתייר*/
+.tourism_vatrefundstores_pt {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -407px -117px;
+}
+
+/*נשים עושות תיירות*/
+.tourism_womendotourism_pt {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -436px -117px;
+}
+
+/*סרטונים לקידום התיירות*/
+.tourism_vod_pt {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -117px;
+}
+
+/*עמדות לקבלת שירותי ממשלה*/
+.govinfostand {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -842px -146px;
+}
+
+/*רב קו*/
+.ravkav_charge {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -523px -117px;
+}
+
+/*בתי מסחר לכלי ירייה*/
+.traders {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -117px;
+}
+
+/*ארגונים ללא מטרת רווח*/
+.guidestarpoints {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -726px -117px;
+}
+
+/*בתי מרקחת*/
+.pharmacies {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -755px -117px;
+}
+
+/*מיפוי תאונות דרכים*/
+.car_accidents {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -784px -117px;
+}
+
+/*מסגרות ציבוריות לטיפול תרופתי ממושך*/
+.addictcareclinics {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -813x -117px;
+}
+
+/*מקומות פעילות העמותות*/
+.malkarcities {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -842px -117px;
+}
+
+/*משרדי רישוי*/
+.translicensingoffices {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -146px;
+}
+
+/*סטטוס מעקב מקורות זיהום מי תהום*/
+.wtrplnsts {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -146px;
+}
+
+/*סניפי מנהל התכנון*/
+.minhalhatichnusnifim {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -146px;
+}
+
+/*קדחת מערב הנילוס*/
+.westnilevirus {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -146px;
+}
+
+/*שכונות בפריפריה החברתית*/
+.neighbrprfl {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -146px;
+}
+
+/*אישפוזיות*/
+.hospitalizationunits {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -146px;
+}
+
+/*בתי המשפט*/
+.batei_mishpat {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -233px -146px;
+}
+
+/*בתי הדין לעבודה*/
+.batei_din_avoda {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -262px -146px;
+}
+
+/*צילומי תלת מימד*/
+.add_3d_images {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -465px -146px;
+}
+
+/*קליקה*/
+.klika {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -494px -146px;
+}
+
+/*מרכזים ושלוחות מנהל תעסוקת אוכלוסיות*/
+.shluhot {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -552px -146px;
+}
+
+/*מהט משרד העבודה*/
+.Employment_mahat {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -523px -146px;
+}
+
+/*פחים סגולים*/
+.glass_recylce_stands {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -291px -146px;
+}
+
+/*קרטוניות – מיכלי איסוף קרטון ציבוריים*/
+.kartioniot {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -146px;
+}
+
+/*מפל"ס-מרשם פליטות לסביבה 2017*/
+.divuchim2017 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -610px -146px;
+}
+
+/*מפל"ס-מרשם פליטות לסביבה 2018*/
+.divuchim2018 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -639px -146px;
+}
+
+/*מפל"ס-מרשם פליטות לסביבה 2019*/
+.divuchim2019 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -668px -146px;
+}
+
+/*ניטור נמלת האש הקטנה במשתלות*/
+.ant_nurseries {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -726px -146px;
+}
+
+/*ערכיות בית גידול מים - נקודה*/
+.aquatic_habitats_pnt {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -755px -146px;
+}
+
+/*תחנות קווי מטרו*/
+.nta_metro_stations {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -59px;
+}
+
+/*שכבת הנצחה לאביאל רון*/
+.commemoration_aviel_ron {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -813px -146px;
+}
+
+/*שכבת שומרי הדרך 2021*/
+.shomrey_haderech {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -1px -175px;
+}
+
+/*מעברים*/
+.maavarim {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -117px;
+}
+
+/*תחנות הידרומטריות*/
+.hydro_station {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -30px -175px;
+}
+
+/*מיקומי דפיברילטורים*/
+.defi {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -117px -175px;
+}
+
+/*תחנות רכבת*/
+.train_statoins {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -320px -146px;
+}
+
+/*מפגש מסילות רכבת*/
+.mifgash_mesila {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -349px -146px;
+}
+
+/*תיירות חקלאית*/
+.agriculturaltourism {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -378px -146px;
+}
+
+/*בתי ספר המינהל לחינוך התיישבותי*/
+.edu_setl_schools {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -407px -146px;
+}
+
+/*פנימיות המינהל לחינוך התיישבותי*/
+.edu_setl_board_schools {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -436px -146px;
+}
+
+/*תכנית יתד*/
+.yeted {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -59px -175px;
+}
+
+/*מפל"ס-מרשם פליטות לסביבה 2020*/
+.divuchim2020 {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -697px -146px;
+}
+
+/*מיצב 2017*/
+.meitzav {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -552px -117px;
+}
+
+/*מכוני כשירות למאבטחים*/
+.diagnostic_institutes {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -117px;
+}
+
+/*מרכזי הדרכה רלב"ד*/
+.ralbadInstructCenters {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -146px;
+}
+
+/*עמדות שירות עצמי – כלי ירייה*/
+.shootpermitservice {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -146px;
+}
+
+/*נקודות לאיסוף נשק*/
+.weapon_collecting_points {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -88px -175px;
+}
+
+/*קרטוניות – מיכלי איסוף קרטון ציבוריים*/
+.kartoniot {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -581px -146px;
+}
+
+/*מכוני אבחון לבדיקת כשירות נפשית*/
+.mental_diagnostic_inst {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -146px -175px;
+}
+
+/*מעברים*/
+.maavarim {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -175px -175px;
+}
+
+/*קרקעות מהוהמות*/
+.add_polution_land_status_test {
+  background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
+  width: 28px;
+  height: 28px;
+  background-position: -204px -175px;
 }
