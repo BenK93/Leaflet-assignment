@@ -1,10 +1,13 @@
 <nz-checkbox-wrapper class="layers-container" style="width: 100%;" (nzOnChange)="choseLayer($event)">
-  <div nz-row>
-    <div *ngFor="let layer of layers;" nz-col nzSpan="8" >
-      <label nz-checkbox nzValue="{{layer.id}}" >
-        <i *ngIf="layer.layerIcon.css" class="{{layer.layerIcon.css}}"
-           style="display: inline-block"></i>
-        {{layer.name}}</label>
+  <div *ngFor="let layer of layers;" nz-row>
+    <label nz-checkbox nzValue="{{layer.id}}">
+    </label>
+    <i *ngIf="layer.layerIcon.css" class="{{layer.layerIcon.css}} icon-image"
+       style="display: inline-block;"></i>
+    <div *ngIf="!layer.layerIcon.css" class="symbol-continar valueIcon square"
+         [style.background-color]="'#ffffff'"
+         [style.border-color]="layer.layerIcon.bars[0]">
     </div>
+    {{layer.name}}
   </div>
 </nz-checkbox-wrapper>

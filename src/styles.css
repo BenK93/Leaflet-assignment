@@ -691,7 +691,6 @@ app-root {
   background-position: -610px -59px;
 }
 
-/*מקלטים*/
 .bombshelters {
   background: url(https://www.govmap.gov.il/govmap/Widget/Layers/css/Images/govmap_css.png);
   width: 28px;
@@ -1498,6 +1497,22 @@ app-root {
   width: 28px;
   height: 28px;
   background-position: -146px -175px;
+}
+
+.icon-image{
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.square {
+  width: 21px;
+  height: 21px;
+  margin-left: 7px;
+  margin-right: 7px;
+  margin-top: 2px;
+  border: 3.5px solid #000;
+  top: 9px;
+  left: 6px;
 }
 
 /*מעברים*/

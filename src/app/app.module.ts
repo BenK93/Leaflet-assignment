@@ -9,6 +9,7 @@ import {NzCheckboxModule} from "ng-zorro-antd/checkbox";
 import {FormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
+import {NzGridModule} from "ng-zorro-antd/grid";
 
 @NgModule({
   declarations: [
@@ -16,13 +17,14 @@ import {CommonModule} from "@angular/common";
     LeafletMapComponent,
     LayersMenuComponent,
   ],
-  imports: [
-    HttpClientModule,
-    LeafletModule,
-    BrowserModule,
-    NzCheckboxModule,
-    FormsModule
-  ],
+    imports: [
+        HttpClientModule,
+        LeafletModule,
+        BrowserModule,
+        NzCheckboxModule,
+        FormsModule,
+        NzGridModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -14,22 +14,18 @@ import {Layer} from "../../interfaces/layer";
   styleUrls: ['./leaflet-map.component.css']
 })
 export class LeafletMapComponent implements OnInit {
-  mapsStyle = {
-    Default: tileLayer('https://api.mapbox.com/styles/v1/yemimatamir/cl2mwrnt3004s14l4kyk7h6iw/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoieWVtaW1hdGFtaXIiLCJhIjoiY2wxNTE0OWxuMHdvMjNkczBveDJqMXFhYiJ9.8gQoryAW-JiF4JsRmZiVUw', {
-      id: 'ud-baselayer-default',
-      maxZoom: 22,
-    }),
-  };
   options: MapOptions = {
-    layers: [
-      this.mapsStyle.Default
-    ],
-    zoom: 14,
-    center: latLng(32.04, 34.80)
+    layers: [tileLayer('https://api.mapbox.com/styles/v1/yemimatamir/cl2mwrnt3004s14l4kyk7h6iw/tiles/256/{z}/{x}/{y}@2x?access_token=pk.eyJ1IjoieWVtaW1hdGFtaXIiLCJhIjoiY2wxNTE0OWxuMHdvMjNkczBveDJqMXFhYiJ9.8gQoryAW-JiF4JsRmZiVUw', {
+      opacity: 0.9,
+      maxZoom: 22,
+      detectRetina: true,
+    })],
+    zoom: 15,
+    center: latLng(32.055, 34.81)
   };
   public map: any;
   chosenLayers: Layer[] = [];
-  layersOnMap :any;
+  layersOnMap: any;
   public width?: number;
   public height?: number;
   public zoom: any;
@@ -38,26 +34,24 @@ export class LeafletMapComponent implements OnInit {
   }
 
   ngOnInit(): void {
-
     this.subscription()
   }
 
   subscription() {
     this.layersServices.chosenLayers.subscribe(chosenLayers => {
       this.chosenLayers = chosenLayers
-      this.addLayersToMap()
+      this.setLayersOnMap()
     })
   }
 
-  addLayersToMap() {
+  setLayersOnMap() {
     const layersArrayString = this.concatenateLayers()
     const bbox = this.calculateBBox()
     console.log(bbox)
-    if(layersArrayString){
-      if(this.layersOnMap){
+    if (layersArrayString) {
+      if (this.layersOnMap) {
         this.map.removeLayer(this.layersOnMap)
       }
-      // this.layersOnMap = this.map.addLayer()
       const southEast = this.map.getBounds().getSouthEast()
       const northWest = this.map.getBounds().getNorthWest()
       this.layersOnMap = L.imageOverlay(
@@ -68,7 +62,7 @@ export class LeafletMapComponent implements OnInit {
     }
   }
 
-  calculateBBox(): string{
+  calculateBBox(): string {
     const bbox = this.map.getBounds().toBBoxString().split(',')
     const itm1 = JSITM.gpsRef2itmRef(bbox[1] + " " + bbox[0]).split(' ')
     const itm2 = JSITM.gpsRef2itmRef(bbox[3] + " " + bbox[2]).split(' ')
@@ -77,13 +71,13 @@ export class LeafletMapComponent implements OnInit {
 
   concatenateLayers(): string {
     let stringLayers = []
-    for(const layer of this.chosenLayers){
+    for (const layer of this.chosenLayers) {
       const tempObject = {
         id: layer.id,
         name: layer.name,
         source: {
           type: 'mapLayer',
-          mapLayerId:layer.id,
+          mapLayerId: layer.id,
         },
         minScale: layer.minScale,
         maxScale: layer.maxScale,
@@ -94,8 +88,6 @@ export class LeafletMapComponent implements OnInit {
   }
 
   ngOnDestroy() {
-    // this.map.clearAllEventListeners;
-    // this.map.remove();
   };
 
   onMapReady(map: Map) {
@@ -109,14 +101,11 @@ export class LeafletMapComponent implements OnInit {
 
   onMapZoomEnd(e: LeafletEvent) {
     this.zoom = e.target.getZoom();
-    const mapSize = this.map.getSize()
-    // @ts-ignore
-    this.width = mapSize.x
-    // @ts-ignore
-    this.height = mapSize.y;
-    console.log(this.map.getBounds().getNorthEast())
-    console.log(this.map.getBounds().getSouth())
-    console.log(this.map.getBounds().getNorth())
+    this.setLayersOnMap()
+  }
+
+  onMoveEnd(e: LeafletEvent) {
+    this.setLayersOnMap()
   }
 
 }
